@@ -1,0 +1,88 @@
+<div class="tab-profile p-5">
+
+  <div class="row">
+      <div class="col-3 text-center mr-5">
+          <div class="photo">
+              <div class="contenedor">
+                  <img src="../assets/img/avatar.png">
+                  <input id="profile" type="file" (change)="uploadPhoto($event)" name="foto">
+                  <button class="upload buttonNewPhoto" (click)='selecFile("profile")' *ngIf="!userId">
+                      <img src="../../../assets/img/cruz.svg" alt="">
+                  </button>
+              </div>
+          </div>
+      </div>
+      <div class="row col-8 border-left">
+          <div class="col-12 form-group">
+              <h5><strong> Sobre Ti</strong></h5>
+              <hr class="my-4">
+              <label>
+                  Nombre
+              </label>
+              <input type="text" class="form-control" name="name" [(ngModel)]="user?.profile.name">
+          </div>
+          <div class="col-12 form-group">
+              <label>
+                  Apellido
+              </label>
+              <input type="text" class="form-control" name="lastname" [(ngModel)]="user?.profile.lastname">
+          </div>
+          <div class="col-12 form-group">
+              <label>
+                  Direccion
+              </label>
+              <input type="text" class="form-control" name="mobile" [(ngModel)]="user?.profile.mobile">
+          </div>
+          <div class="col-8 form-group">
+              <label>
+                  Email
+              </label>
+              <input type="text" class="form-control" name="phone" [(ngModel)]="user?.profile.phone">
+          </div>
+          <div class="col-4 form-group">
+              <label>
+                  Ciudad
+              </label>
+              <input type="text" class="form-control" name="fax" [(ngModel)]="user?.profile.fax">
+          </div>
+          <div class="col-6 form-group">
+              <label>
+                  Fecha de nacimiento
+              </label>
+              <input type="text" class="form-control" name="fax" [(ngModel)]="user?.profile.fax">
+          </div>
+          <div class="col-6 form-group">
+              <label>
+                  Telefono
+              </label>
+              <input type="text" class="form-control" name="fax" [(ngModel)]="user?.profile.fax">
+          </div>
+          <div class="col-12 pt-5 form-group">
+              <h5><strong>Tu cuenta</strong> </h5>
+              <hr class="my-4">
+          </div>
+              <div class="col-6 form-group">
+                  <label>
+                      Nueva clave
+                  </label>
+                  <input type="text" class="form-control" name="fax" [(ngModel)]="user?.profile.fax">
+              </div>
+              <div class="col-6 form-group">
+                  <label>
+                      Repite la nueva clave
+                  </label>
+                  <input type="text" class="form-control" name="fax" [(ngModel)]="user?.profile.fax">
+              </div>
+
+              <div class="mt-5 pt-2 center">
+                  <button class="btn btn-green-dxf btn-cool" (click)="editBasicInfo()">
+                      Guardar
+                  </button>
+
+                  <div class="pt-2 pointer" (click)="cancel()">
+                      Cancelar
+                  </div>
+              </div>
+      </div>
+  </div>
+</div>

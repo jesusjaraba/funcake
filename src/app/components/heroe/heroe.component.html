@@ -1,0 +1,14 @@
+<div class="card-columns">
+    <div *ngFor="let producto of heroe.productos; let i = index ">
+        <div class="card animated fadeIn fast">
+            <img class="card-img-top img-fluid" [src]="producto.img" [alt]="producto.name">
+            <div class="card-body">
+                <h4 class="card-title">{{ producto.nombre }}</h4>
+                <p class="card-text"> {{ producto.bio }} </p>
+                <button (click)="verTortas(producto.id)" type="button" class="btn btn-outline-primary btn-block">
+              Ver más...
+            </button>
+            </div>
+        </div>
+    </div>
+</div>

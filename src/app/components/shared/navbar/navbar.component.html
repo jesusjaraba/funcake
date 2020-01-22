@@ -1,0 +1,142 @@
+<ng-template #template>
+    <div [formGroup]="valueLoadsDetails" class="items2ship">
+        <div class="title">
+            <strong>Crear Reposteria</strong>
+        </div>
+        <div class="items2ShipRow1">
+            <div class="form-group">
+                <label>Nombre de la empresa</label> <span
+                    *ngIf="valueLoadsDetails.controls['handling'].errors?.required">*</span>
+                <input (blur)="eventTouched($event)" type="Number" min="0"
+                    [ngStyle]="{'border-color': invalid === true && valueLoadsDetails.controls['handling'].errors?.required ? 'red' : '' }"
+                    class="form-control" formControlName="handling">
+            </div>
+            <div class="form-group">
+                <label>Direccion</label> <span
+                    *ngIf="valueLoadsDetails.controls['packageTypes'].errors?.required">*</span>
+                <input type="Number" min="0"
+                    [ngStyle]="{'border-color': invalid === true && valueLoadsDetails.controls['pieces'].errors?.required ? 'red' : '' }"
+                    class="form-control" formControlName="pieces">
+            </div>
+            <div class="form-group">
+                <label>Numero de telefono</label>
+                <input type="Number" min="0"
+                    [ngStyle]="{'border-color': invalid === true && valueLoadsDetails.controls['pieces'].errors?.required ? 'red' : '' }"
+                    class="form-control" formControlName="pieces">
+            </div>
+
+        </div>
+        <div class="items2ShipRow3">
+            <div formGroupName="dimensions" class="form-group">
+                <label>Ciudad</label>
+                <select name="dimensions" id="" class="form-control" formControlName="units">
+                    <option value="in">Cartagena</option>
+                    <option value="cm">Medellin</option>
+                    <option value="cm">Barranquilla</option>
+                </select>
+            </div>
+            <div class="items2ShipRow2">
+                <div class="form-group">
+                    <label class=""> Descripcion</label>
+                    <input type="text" class="form-control" formControlName="commodityDescription"
+                        [ngStyle]="{'border-color': invalid === true && valueLoadsDetails.controls['commodityDescription'].errors?.required ? 'red' : '' }">
+                </div>
+            </div>
+            <div formGroupName="dimensions" class="form-group ">
+                <label>correo electronico</label> <span
+                    *ngIf="valueLoadsDetails.controls.dimensions.controls['length'].errors?.required">*</span>
+                <input (blur)="eventTouched($event)" type="Number"
+                    [ngStyle]="{'border-color': invalid === true && valueLoadsDetails.controls.dimensions.controls['length'].errors?.required ? 'red' : '' }"
+                    min="0" class="form-control" formControlName="length">
+            </div>
+            <div formGroupName="dimensions" class="form-group small-boxes">
+                <label>Celular</label>
+                <input type="Number"
+                    [ngStyle]="{'border-color': invalid === true && valueLoadsDetails.controls.dimensions.controls['width'].errors?.required ? 'red' : '' }"
+                    min="0" class="form-control" formControlName="width">
+            </div>
+        </div>
+        <div class="addBotones">
+            <div>
+                <button class="btn actionButtons btn-cool " (click)="verifyFields('details')">Add</button>
+                <button class="btn  actionButtons btn-cool" (click)="closeModalLoaDetails()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</ng-template>
+<nav class="navbar navbar-expand-md  navbar-light bg-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand" href="#">
+        <img src="assets/img/funcake.png" width="100" height="30" alt="">
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav col-9">
+
+            <!-- active -->
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['home']">Promociones</a>
+            </li>
+            <!-- <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['heroes']">Reposterias</a>
+        </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Reposterias
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" (click)="respoterias('Cartagena')">Cartagena</a>
+                    <a class="dropdown-item" (click)="respoterias('Medellin')">Medellin</a>
+                    <a class="dropdown-item" (click)="respoterias('Barranquilla')">Barranquilla</a>
+                </div>
+            </li>
+            <!-- <li class="nav-item" routerLinkActive="active">
+    <a class="nav-link" [routerLink]="['companies']">Reposterias</a>
+  </li> -->
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['about']">Sobre Nosotros</a>
+            </li>
+
+        </ul>
+
+
+        <div class="navbar-text optionsReposteria ccol">
+            <a class="dropdown-item  btn btn-outline-primary  crearReposteria"
+                (click)="createReposteria(template)">Registra tu Reposteria</a>
+            <button (click)="login()" *ngIf="!auth.isAuthenticated()" type="button"
+                class="btn btn-outline-primary btn-sm">Ingresar
+            </button>
+
+
+            <ul *ngIf="auth.isAuthenticated()" class="navbar-nav mr-3 d-none d-md-flex flex-row">
+                <li class="nav-item dropdown" dropdown placement="bottom right">
+                    <a href="#" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="avatar thumb-sm float-left mr-2">
+                            <img class="rounded-circle">
+                            <img src="../assets/img/avatar.png" class=" avatar rounded-circle">
+                        </span>
+                        <span class="small"> JESUS <span class="fw-semi-bold">JARABA</span></span>
+                        <b class="caret"></b>
+                    </a>
+                    <div class="nav-item dropdown-menu-right  dropdown-menu" dropdown placement="bottom right"
+                        aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item " [routerLink]="['perfil']"><i class="la la-sign-out "></i> &nbsp;
+                        Perfil</a></li>
+                <li><a class="dropdown-item " [routerLink]="['mispostres']"><i class="la la-sign-out "></i> &nbsp; Mis
+                        Postres</a></li>
+                <li><a class="dropdown-item " (click)="salir() "><i class="la la-sign-out "></i> &nbsp; Salir</a></li>
+        </div>
+        </li>
+        </ul>
+
+    </div>
+
+    </div>
+</nav>

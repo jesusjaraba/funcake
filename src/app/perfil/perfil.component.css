@@ -1,0 +1,91 @@
+.tab-profile {
+    color: #4b4a4a;
+}
+
+.btn-green-dxf {
+    background-color: #A3CC57;
+    min-width: 7em;
+    ;
+}
+.upload{
+    top: 6em;
+    right: .3em;
+}
+
+.center {
+    text-align: center;
+    margin: 0 auto !important;
+    display: table;
+}
+
+.btn-cool {
+    min-width: 7.5em;
+    margin-bottom: 0.3em;
+    border-radius: 2em;
+    display: block;
+}
+
+.tab-profile img {
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.tab-profile input {
+    background-color: #fafafa;
+}
+
+.tab-profile .btn-cool {
+    display: inline;
+}
+
+.buttonNewPhoto {
+    top: 6.5em;
+    right: 3.9em;
+    width: 2em;
+    height: 2em;
+    background: #CB2A36; 
+    border-radius: 50%; 
+     border-color: #CB2A36;
+}
+
+.contenedor{
+    position: relative; 
+     top: 0; 
+     right: -0.8em;
+}
+.contenedor button {
+        position: absolute;
+        top: 0;
+        right: -0.8em;
+}
+#profile{
+    display: none;
+}
+
+.tab-profile .photo .contenedor button img {
+    width: 1em;
+    height: 1em;
+}
+
+@media only screen and (max-width: 1440px) {
+    .tab-profile img {
+        width: 14em;
+        height: 14em;
+    }
+    .tab-profile .photo .contenedor button {
+        top: 6em;
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .tab-profile img {
+        width: 10em;
+        height: 10em;
+    }
+    .tab-profile .photo .contenedor button {
+        top: 4em;
+        right: 0.8em;
+    }
+}

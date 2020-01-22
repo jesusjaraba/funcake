@@ -1,0 +1,24 @@
+
+<div class="card-columns">
+    <div *ngFor="let torta of tortas; let i = index ">
+        <div class="card animated fadeIn fast" >
+            <img class="card-img-top img-fluid" [src]="torta.img" [alt]="torta.nombre">
+            <div class="card-body">
+              <h4 class="card-title">{{ torta.nombre }}</h4>
+              <p class="card-text"> {{ torta.bio }} </p> 
+              <h5 class="card-text"><strong class="text-muted">{{ torta.precio }}</strong></h5>
+             <div *ngIf="torta.qr">
+                <img class="card-img-top img-fluid" [src]="torta.qr" [alt]="torta.nombre">
+             </div> 
+             
+              <button (click)="verTortas(torta , i)"
+                type="button" class="btn btn-outline-primary btn-block">
+                {{ i !== 0 ? 'Comprar' : 'Diseñar torta'}}
+              </button>
+              <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">Ver más link...</a> -->
+            </div>
+          </div>
+    </div>
+  </div>
+  
+  

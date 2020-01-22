@@ -1,0 +1,27 @@
+<h1 class="animated fadeIn fast">{{ exist ? 'Arma tu torta' : 'Sobre Funcake' }}<h1>
+<hr>
+<p *ngIf="!exist" class="animated fadeIn">
+  Funcake nació como una idea de negocio para el proyecto de aula en administración de empresas,
+de la fundación universitaria colombo internacional en octubre 20 del 2016, gracias a ese modelo
+de negocio comenzamos llamar la atención de varios profesores, estudiantes, y directivos de la
+universidad misma, al ver eso, nos inscribimos al semillero de investigación de la carrera misma
+con el fin poder presentar en las convocatorias de emprendimientos que realiza la cámara de
+comercio, edesi, redcolsi regional y nacional. Pero no tuvimos suerte para lograr el apoyo de la
+capacitación y apoyo económico que ofrecían como premios, lastimosamente no fuimos escogidos
+en ninguna de ellas.
+Al pasar los años 2017, 2018 el proyecto se estancó y nos desanimamos bastante que decidimos
+no continuar con este proyecto, además porque no teníamos apoyo económico, estábamos
+desempleados, teníamos muchas deudas en el hogar y en el estudio, pero en el caminar del área
+de emprendimiento siempre volvía la oportunidad para seguir luchando por el proyecto y avanzar
+en el, y otra vez se estancaba. Hasta que a finales del año 2018 y principios del 2019, decidimos
+hacer el proyecto realidad por nuestra propia cuenta, con nuestros propios recursos gracias al
+trabajo y al capital que se logra reunir para poder crear el primer demo de la aplicación con el fin
+de poder buscar clientes, proveedores, contratos, para poder lograr avanzar poco a poco en la
+creación de la empresa Funcake, ¿y adivinen qué? Lo logramos, este proyecto no solo se convirtió
+en una nota para la universidad, sino un proyecto de vida la cual beneficiara a muchas familias.
+</p> 
+<div *ngIf="exist">
+  <iframe frameborder="0" [src]="url" width="1100" height="700"></iframe>
+</div>
+
+`

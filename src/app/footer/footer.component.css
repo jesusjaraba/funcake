@@ -1,0 +1,11 @@
+.text-muted, a{
+    color: #6c757d!important;
+}
+.list-unstyled{
+    padding-left: 0;
+    list-style: none;
+}
+
+.text-center{
+    text-align: center;
+}

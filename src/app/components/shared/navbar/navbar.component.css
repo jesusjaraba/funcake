@@ -1,0 +1,24 @@
+
+.avatar {
+    width: 2em;
+}
+.items2ship{
+    padding: 2em;
+}
+.addBotones{
+    
+    text-align: center;
+}
+.actionButtons{
+    background-color: #8A0E31;
+    color: white;
+    margin: 1em;
+}
+.optionsReposteria{
+    display: flex;
+    margin-right: 2em;
+}
+.crearReposteria{
+    text-align: center;
+    align-self: center;
+}
