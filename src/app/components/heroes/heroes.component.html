@@ -1,11 +1,11 @@
-<h1>Nuestros Aliados en {{heroes[0].city}}</h1>
+<h1>Nuestros Aliados en {{heroes[0].?city}}</h1>
 <div style="text-align: center" class="cover">
     <img style="width: 100%" [src]="heroes[0].img" alt="">
 </div>
 
-<hr  >  {{heroes[0].description}}
-
+<hr  >  {{heroes[0].?description}}
+hhhjjhj
 
 <div class="">
-    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes[0].reposterias; let i = index"></app-heroe-tarjeta>
+    <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes[0].?reposterias; let i = index"></app-heroe-tarjeta>
 </div>
