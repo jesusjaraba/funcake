@@ -14,7 +14,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class NavbarComponent  {
   modalRef: BsModalRef;
   createReposteiras : FormGroup;
-  constructor( private auth: AuthService, private router: Router ,  private modalService: BsModalService, private fb: FormBuilder ) {
+  constructor( public auth: AuthService, private router: Router ,  private modalService: BsModalService, private fb: FormBuilder ) {
     auth.handleAuthentication();
   }
 

@@ -5,8 +5,8 @@
           <div class="photo">
               <div class="contenedor">
                   <img src="../assets/img/avatar.png">
-                  <input id="profile" type="file" (change)="uploadPhoto($event)" name="foto">
-                  <button class="upload buttonNewPhoto" (click)='selecFile("profile")' *ngIf="!userId">
+                  <input id="profile" type="file"  name="foto">
+                  <button class="upload buttonNewPhoto" (click)='selecFile("profile")' >
                       <img src="../../../assets/img/cruz.svg" alt="">
                   </button>
               </div>
@@ -75,11 +75,11 @@
               </div>
 
               <div class="mt-5 pt-2 center">
-                  <button class="btn btn-green-dxf btn-cool" (click)="editBasicInfo()">
+                  <button class="btn btn-green-dxf btn-cool" >
                       Guardar
                   </button>
 
-                  <div class="pt-2 pointer" (click)="cancel()">
+                  <div class="pt-2 pointer">
                       Cancelar
                   </div>
               </div>

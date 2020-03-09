@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
-
+  user;
   constructor() { }
 
   ngOnInit() {
+  
   }
 
 }
