@@ -1,8 +1,8 @@
 <div class="row cardReposteria" >
-  <img class="card-img-top img-fluid col-3" [src]="heroe.logo" [alt]="heroe.name">
+  <img class="card-img-top img-fluid col-4" [src]="heroe.logo" [alt]="heroe.name">
   <div class="  col">
     <h4 class="card-title">{{ heroe.name }} <ngb-rating [rate]="heroe.stars"></ngb-rating> </h4>
-    <p class="card-text"> {{ heroe.description }} </p>
+    <p *ngIf="!mobileRes" class="card-text"> {{ heroe.description }} </p>
     <p class="card-text"><small class="text-muted">{{ heroe.address }}</small></p>
 
     <button (click)="verHeroe()"

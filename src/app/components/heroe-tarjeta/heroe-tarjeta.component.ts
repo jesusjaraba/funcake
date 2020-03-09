@@ -14,12 +14,18 @@ export class HeroeTarjetaComponent implements OnInit {
   @Input() index: number;
 
   @Output() heroeSeleccionado: EventEmitter<number>;
+  mobileRes: boolean;
 
   constructor(private router: Router, config: NgbRatingConfig) {
     // customize default values of ratings used by this component tree
     config.max = 5;
     config.readonly = true;
     this.heroeSeleccionado = new EventEmitter();
+    if (window.innerWidth < 768) {
+      this.mobileRes = true;
+    } else {
+      this.mobileRes = false;
+    }
   }
 
   ngOnInit() {

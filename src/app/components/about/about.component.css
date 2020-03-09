@@ -1,0 +1,9 @@
+.sizes  {
+    width: 100%;
+    height: 400px;
+}
+@media (max-width: 760) {
+    .sizes {
+      height: 250px ;
+    }
+}

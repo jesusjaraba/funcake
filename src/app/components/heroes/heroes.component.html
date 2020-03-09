@@ -1,9 +1,9 @@
 <h1>Nuestros Aliados en {{heroes[0].city}}</h1>
-<div class="cover">
-    <img [src]="heroes[0].img" alt="">
+<div style="text-align: center" class="cover">
+    <img style="width: 100%" [src]="heroes[0].img" alt="">
 </div>
 
-<hr> {{heroes[0].description}}
+<hr *ngIf="!isMobileResolution" >  {{heroes[0].description}}
 
 
 <div class="">
